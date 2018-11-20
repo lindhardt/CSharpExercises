@@ -169,7 +169,14 @@ namespace School
             // TODO: Exercise 4: Task 2c: Work out the difference between the current date and the value provided
             // TODO: Exercise 4: Task 2d: Convert this result into a number of years
             // TODO: Exercise 4: Task 2e: Convert the number of years into a string and return it
+            if( value != null )
+            {
+                DateTime dob = (DateTime)value;
 
+                int age = (int)(DateTime.Now.Subtract(dob).Days / 365.25);
+
+                return "" + age; 
+            }
             return "";
         }
 
