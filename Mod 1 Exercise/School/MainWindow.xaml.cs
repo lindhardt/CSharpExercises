@@ -102,6 +102,7 @@ namespace School
 
                 case Key.Insert:
                     sf = new StudentForm();
+                    sf.Title = "New Student for Class " + teacher.Class;
 
                     if( sf.ShowDialog().Value )
                     {
