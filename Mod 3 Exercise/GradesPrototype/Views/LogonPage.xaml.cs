@@ -29,7 +29,7 @@ namespace GradesPrototype.Views
 
         #region Event Members
         // TODO: Exercise 1: Task 2a: Define the LogonSuccess event handler
-
+        public event EventHandler LogonSuccess;
         #endregion
 
         #region Logon Validation
@@ -38,5 +38,18 @@ namespace GradesPrototype.Views
         // Simulate logging on (no validation or authentication performed yet)
 
         #endregion
+
+        private void Logon_Click(object sender, RoutedEventArgs e)
+        {
+            SessionContext.UserName = username.Text;
+            SessionContext.UserRole = userrole.IsChecked.Value 
+                                            ? Role.Teacher : Role.Student;
+            SessionContext.CurrentStudent = "Eric Gruber";
+
+            if(LogonSuccess != null )
+            {
+                LogonSuccess(this, new EventArgs());
+            }
+        }
     }
 }
