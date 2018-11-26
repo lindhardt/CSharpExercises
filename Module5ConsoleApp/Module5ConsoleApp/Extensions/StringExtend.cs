@@ -10,6 +10,9 @@ namespace Module5ConsoleApp.Extensions
 {
     public static class StringExtend
     {
+        public static bool MyCompare(this string s, string s1) =>
+            s == s1;
+
         public static bool ContainsNumbers(this string s)
         {
             return Regex.IsMatch(s, @"\d");
